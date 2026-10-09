@@ -1,17 +1,178 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Active Kids Arcade</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#0f172a;
+color:white;
+}
+
+header{
+background:#0284c7;
+padding:25px;
+text-align:center;
+}
+
+#search{
+display:block;
+width:300px;
+max-width:90%;
+margin:20px auto;
+padding:12px;
+font-size:16px;
+border-radius:8px;
+border:none;
+}
+
+.section{
+padding:20px;
+}
+
+.section h2{
+color:#38bdf8;
+}
+
+.games{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+gap:15px;
+}
+
+.game{
+background:#1e293b;
+padding:15px;
+border-radius:10px;
+text-align:center;
+}
+
+</style>
+
 </head>
+
 <body>
 
+<header>
 <h1>🎮 Active Kids Arcade</h1>
+<p>Safe Games Approved by Active Kids Staff</p>
+</header>
 
-<h2>Retro Classics</h2>
+<input id="search" type="text" placeholder="Search games..." onkeyup="filterGames()">
 
-<ul>
-<li><a href="https://www.myabandonware.com/game/the-incredible-machine-2-1n2/play-1n2" target="_blank">The Incredible Machine 2</a></li>
-</ul>
+<div class="section">
+
+<h2>🕹 Retro Classics</h2>
+
+<div class="games">
+<div class="game">🦔 Sonic the Hedgehog</div>
+<div class="game">🍄 Super Mario Bros</div>
+<div class="game">🚂 Oregon Trail</div>
+<div class="game">🎳 Space Cadet Pinball</div>
+<div class="game">⚙️ The Incredible Machine 2</div>
+<div class="game">🐍 Snake</div>
+<div class="game">💣 Minesweeper</div>
+<div class="game">👻 Pac-Man</div>
+<div class="game">🐸 Frogger</div>
+<div class="game">🚀 Asteroids</div>
+<div class="game">🧱 Tetris</div>
+<div class="game">👾 Galaga</div>
+</div>
+
+<h2>🧠 Brain Games</h2>
+
+<div class="games">
+<div class="game">🧩 Bloxorz</div>
+<div class="game">♟ Chess</div>
+<div class="game">⚫ Checkers</div>
+<div class="game">🔴 Connect Four</div>
+<div class="game">🔢 Sudoku</div>
+<div class="game">2048</div>
+<div class="game">🀄 Mahjong</div>
+<div class="game">📦 Sokoban</div>
+<div class="game">🚗 Unblock Me</div>
+<div class="game">🔤 Word Search</div>
+</div>
+
+<h2>🔧 STEM & Engineering</h2>
+
+<div class="games">
+<div class="game">⚙️ The Incredible Machine 2</div>
+<div class="game">🌉 Bridge Builder</div>
+<div class="game">✂️ Cut The Rope</div>
+<div class="game">💧 Happy Glass</div>
+<div class="game">🥛 Smiling Glass Pro</div>
+<div class="game">🎱 Marble Run</div>
+<div class="game">🌎 World of Goo</div>
+<div class="game">🪐 Physics Challenge</div>
+</div>
+
+<h2>🏗 Building & Creation</h2>
+
+<div class="games">
+<div class="game">🧱 Minecraft Classic</div>
+<div class="game">🏙 City Builder</div>
+<div class="game">🏘 Idle City Builder</div>
+<div class="game">🎨 Pixel Art Creator</div>
+<div class="game">🏗 Sandbox Builder</div>
+</div>
+
+<h2>⚽ Sports</h2>
+
+<div class="games">
+<div class="game">⛳ Mini Golf</div>
+<div class="game">⚽ Soccer</div>
+<div class="game">🏀 Basketball</div>
+<div class="game">🎳 Bowling</div>
+<div class="game">🏓 Table Tennis</div>
+<div class="game">🏹 Archery</div>
+</div>
+
+<h2>🎉 Friday Fun</h2>
+
+<div class="games">
+<div class="game">🔥 Fireboy & Watergirl</div>
+<div class="game">🏍 Moto X3M</div>
+<div class="game">🧅 Super Onion Boy</div>
+<div class="game">🫧 Bubble Shooter</div>
+<div class="game">🛶 Raft Wars</div>
+</div>
+
+</div>
+
+<script>
+
+function filterGames() {
+
+let input =
+document.getElementById("search")
+.value
+.toLowerCase();
+
+let games =
+document.querySelectorAll(".game");
+
+games.forEach(game => {
+
+if(game.innerText.toLowerCase().includes(input))
+{
+game.style.display="block";
+}
+else
+{
+game.style.display="none";
+}
+
+});
+
+}
+
+</script>
 
 </body>
 </html>
+``
